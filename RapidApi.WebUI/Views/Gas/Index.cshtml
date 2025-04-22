@@ -1,0 +1,29 @@
+﻿@model List<GassPriceViewModel.Result>
+@{
+    ViewData["Title"] = "Index";
+    int count = 0;
+}
+
+<h1>Fiyat Tablosu</h1>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>#</th>
+        <th>Birim</th>
+        <th>LPG Fiyatı</th>
+        <th>Dizel Fiyatı</th>
+        <th>Benzin Fiyatı</th>
+        <th>Ülke</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <td>@count</td>
+            <td>@item.currency</td>
+            <td>@item.lpg</td>
+            <td>@item.diesel</td>
+            <td>@item.gasoline</td>
+            <td>@item.country</td>
+        </tr>
+    }
+</table>
